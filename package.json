@@ -14,7 +14,8 @@
     "@types/react-dom": "^16.9.3",
     "core-js": "3",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "rxjs-hooks": "^0.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

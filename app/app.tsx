@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import * as ReactDOM from 'react-dom';
 
 
 function Application () {
   const [cnt, setCnt] = useState(0)
+  const handleClick = useCallback(event => setCnt(cnt + 1))
 
   return (
     <div>
       <div>
-        <button onClick={event => setCnt(cnt + 1)}>click</button>
+        <button onClick={handleClick}>click</button>
       </div>
       count: {cnt}
     </div>

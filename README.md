@@ -11,5 +11,6 @@ cd okinawa-frontend-meetup5
 
 npm install
 npm run serve
+# chromium http://localhost:8080
 ```
 

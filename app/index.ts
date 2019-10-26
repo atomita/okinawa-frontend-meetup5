@@ -11,7 +11,7 @@ async function boot () {
   try {
     await import('./app')
   } catch (e) {
-    errorlog(`Error: ${e.toString()}`, e)
+    console.log(`Error: ${e.toString()}`, e)
   }
 }
 

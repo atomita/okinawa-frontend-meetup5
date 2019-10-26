@@ -1,17 +1,25 @@
-import React, { useState, useCallback } from 'react';
-import * as ReactDOM from 'react-dom';
-
+import React, { useState, useCallback } from 'react'
+import * as ReactDOM from 'react-dom'
+import { useObservable } from "rxjs-hooks"
+import { map } from "rxjs/operators"
 
 function Application () {
   const [cnt, setCnt] = useState(0)
   const handleClick = useCallback(event => setCnt(cnt + 1))
+
+  const cnt10 = useObservable(
+    cnt$ => cnt$.pipe(map(v => v * 10)),
+    [0],
+    [cnt]
+  )
 
   return (
     <div>
       <div>
         <button onClick={handleClick}>click</button>
       </div>
-      count: {cnt}
+      <p>count: {cnt}</p>
+      <p>count * 10: {cnt10}</p>
     </div>
   )
 }
